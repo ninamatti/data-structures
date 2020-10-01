@@ -1,7 +1,13 @@
-function Node(value) {
-  this.next = null;
-  this.value = value;
+console.log("Hi");
+
+class Node {
+  constructor(value) {
+    this.next = null;
+    this.value = value;
+  }
 }
+//let myNode = new Node(5);
+//console.log('Hii!',  myNode.value);
 
 class LinkedList {
   constructor(headValue) {
@@ -11,7 +17,16 @@ class LinkedList {
     }
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    let nodeToAppend = new Node(value);
+    if (!this.head) {
+      this.head = nodeToAppend;
+      this.tail = this.head;
+    }
+    this.tail.next = nodeToAppend;
+    this.tail = nodeToAppend;
+    return this.tail;
+  }
 
   removeHead() {}
 
