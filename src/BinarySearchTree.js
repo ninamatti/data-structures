@@ -5,27 +5,34 @@ class BinarySearchTree {
     this.right = null;
   }
 
-  insert(value) {
-    if (this.value === value) {
-      return this;
-    }
-    if (value < this.value) {
-      if (this.left === null) {
-        this.left = new BinarySearchTree(value);
-      } else {
-        this.left.insert(value);
+  insert(valueToInsert) {
+    let cursor = (node) => {
+      // base case (root is same as insert value)
+      if (node.value === valueToInsert) {
+        return;
       }
-    } else {
-      if (this.right === null) {
-        this.right = new BinarySearchTree(value);
+      if (valueToInsert < node.value) {
+        if (node.left === null) {
+          node.left = new BinarySearchTree(valueToInsert);
+          return;
+        } else {
+          cursor(node.left);
+        }
       } else {
-        this.right.insert(value);
+        if (node.right === null) {
+          node.right = new BinarySearchTree(valueToInsert);
+          return;
+        } else {
+          cursor(node.right);
+        }
       }
-    }
-    console.log("THIS: ", this);
+    };
+    cursor(this);
     return this;
   }
+
   contains(value) {}
+
   traverseDepthFirstInOrder(callBack) {}
 }
 

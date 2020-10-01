@@ -26,7 +26,6 @@ class Tree {
     search(this);
     return result;
   }
-  // console.log("value of current tree :" + this, "   target* " + value, "current tree * "+ this.value);
 
   /*
 +-------------------------+
