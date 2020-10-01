@@ -38,7 +38,7 @@ describe.only("Linked Lists", () => {
     });
   });
 
-  describe.only("The appendToTail method", () => {
+  describe("The appendToTail method", () => {
     it("should exist on the LinkedList prototype", () => {
       expect(LinkedList.prototype.appendToTail).to.exist;
       expect(typeof LinkedList.prototype.appendToTail).to.equal("function");

@@ -28,7 +28,11 @@ class LinkedList {
     return this.tail;
   }
 
-  removeHead() {}
+  removeHead() {
+    let currentHead = this.head;
+    this.head = this.head.next;
+    return currentHead;
+  }
 
   findNode(value) {}
 
