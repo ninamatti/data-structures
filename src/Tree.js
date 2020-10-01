@@ -10,7 +10,23 @@ class Tree {
     return childToAdd;
   }
 
-  contains(value) {}
+  contains(value) {
+    let result = false;
+    let search = (root) => {
+      if (root.value === value) {
+        result = true;
+        return;
+      }
+      if (root.children.length !== 0) {
+        for (let child of root.children) {
+          search(child);
+        }
+      }
+    };
+    search(this);
+    return result;
+  }
+  // console.log("value of current tree :" + this, "   target* " + value, "current tree * "+ this.value);
 
   /*
 +-------------------------+
