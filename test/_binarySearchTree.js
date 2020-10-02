@@ -15,13 +15,15 @@ describe("The Binary Search Tree", () => {
     anotherTree = new BinarySearchTree(10);
     anotherTree.insert(5);
     anotherTree.insert(15);
-    anotherTree.insert(8);
     anotherTree.insert(3);
+    anotherTree.insert(8);
+    /*  anotherTree.insert(8);
+   
     anotherTree.insert(7);
     anotherTree.insert(20);
     anotherTree.insert(17);
     anotherTree.insert(9);
-    anotherTree.insert(14);
+    anotherTree.insert(14); */
 
     fullBST = new BinarySearchTree(10);
     fullBST.insert(5);
@@ -79,7 +81,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe.only("The contains method", () => {
+  describe("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.contains).to.exist;
       expect(typeof BinarySearchTree.prototype.contains).to.equal("function");
@@ -102,15 +104,19 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe("The traverseDepthFirstInOrder method", () => {
+  describe.only("The traverseDepthFirstInOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstInOrder).to.exist;
     });
 
     it("should traverse the left branch, root, and right branch in that order", () => {
       const result = [];
-      anotherTree.traverseDepthFirstInOrder((node) => result.push(node.value));
-      expect(result).to.eql([3, 5, 7, 8, 9, 10, 14, 15, 17, 20]);
+      anotherTree.traverseDepthFirstInOrder((node) => {
+        //console.log(node.value);
+        result.push(node.value);
+      });
+      //[3, 5, 7, 8, 9, 10, 14, 15, 17, 20]
+      expect(result).to.eql([3, 5, 8, 10, 15]);
     });
 
     it("should take a function as the parameter", () => {
