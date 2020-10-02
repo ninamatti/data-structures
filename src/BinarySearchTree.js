@@ -76,8 +76,6 @@ class BinarySearchTree {
 module.exports = BinarySearchTree;
 
 /*
-
-/*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 |X                               X
 |X   Basic Requirements:         X
