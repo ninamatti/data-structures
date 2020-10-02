@@ -56,7 +56,7 @@ class BinarySearchTree {
       }
     };
     cursor(this);
-    return found;
+    return found; //
   }
 
   traverseDepthFirstInOrder(callBack) {
@@ -65,6 +65,10 @@ class BinarySearchTree {
     // if parent has right child walk right
   }
 }
+
+module.exports = BinarySearchTree;
+
+module.exports = BinarySearchTree;
 
 module.exports = BinarySearchTree;
 
