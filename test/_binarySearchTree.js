@@ -104,7 +104,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe.only("The traverseDepthFirstInOrder method", () => {
+  describe("The traverseDepthFirstInOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstInOrder).to.exist;
     });
