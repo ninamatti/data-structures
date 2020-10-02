@@ -39,6 +39,7 @@ describe.only("Graphs", () => {
       graph.addNode(5);
       graph.addNode(3);
       graph.addNode(6);
+      // console.log(graph.nodes[3].push(8));
       expect(graph.nodes[5]).to.exist;
       expect(graph.nodes[3]).to.exist;
       expect(graph.nodes[6]).to.exist;
