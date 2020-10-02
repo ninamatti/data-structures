@@ -12,7 +12,6 @@ class Graph {
     this.nodes[value] = [];
   }
 
-  // contains(value) returns boolean. Returns true if value is found in graph, false otherwise
   contains(value) {
     if (value in this.nodes) {
       return true;
@@ -45,9 +44,20 @@ class Graph {
     }
   }
 
-  // removeNode(value) removes a node from graph and returns undefined.
   removeNode(value) {
-    // delete this.nodes[value];
+    // check if contains node
+    if (this.contains(value)) {
+      //loop through object check each array and remove instances of value
+      let nodeList = this.nodes;
+      for (let nodeVal in nodeList) {
+        if (nodeList[nodeVal].includes(value)) {
+          this.nodes[nodeVal] = this.nodes[nodeVal].filter(
+            (val) => val !== value
+          );
+        }
+      }
+      delete this.nodes[value];
+    }
   }
 
   removeEdge(value1, value2) {
@@ -56,10 +66,6 @@ class Graph {
       this.nodes[value2] = this.nodes[value2].filter((val) => val !== value1);
     }
   }
-
-  /* 
- .removeEdge(value1, value2) returns undefined. Remove connection between two nodes
- What are the time complexities? */
 }
 
 /*
