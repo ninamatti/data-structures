@@ -27,6 +27,30 @@ class Tree {
     return result;
   }
 
+  remove(value) {
+    let removedNode;
+    let parentOfRemovedNode;
+
+    let search = (root) => {
+      if (root.value === value) {
+        removedNode = root.value;
+        parentOfRemovedNode.children = parentOfRemovedNode.children.filter(
+          (x) => x.value !== value
+        );
+        return;
+      }
+
+      if (root.children.length !== 0) {
+        parentOfRemovedNode = root;
+        for (let i = 0; i < root.children.length; i++) {
+          search(root.children[i]);
+        }
+      }
+    };
+    search(this);
+    return removedNode;
+  }
+
   /*
 +-------------------------+
 | Advanced Requirements!! |

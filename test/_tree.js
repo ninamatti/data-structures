@@ -45,6 +45,7 @@ describe("Trees", () => {
 
     it("should return true if a value exists", () => {
       tree.addChild(2);
+      tree.remove(2);
       expect(tree.contains(2)).to.equal(true);
     });
 
@@ -60,6 +61,24 @@ describe("Trees", () => {
       tree.children[1].addChild(5);
       expect(tree.contains(4)).to.equal(true);
       expect(tree.contains(5)).to.equal(true);
+    });
+  });
+
+  describe.only("The remove method", () => {
+    it("should exist on the Tree prototype", () => {
+      expect(Tree.prototype.remove).to.exist;
+    });
+
+    it("should remove a child node", () => {
+      tree.addChild(2);
+      tree.remove(2);
+      expect(tree.contains(2)).to.equal(false);
+    });
+
+    it("should return the removed node", () => {
+      tree.addChild(2);
+      let result = tree.remove(2);
+      expect(result).to.equal(2);
     });
   });
 

@@ -31,9 +31,15 @@ class BinarySearchTree {
     return this;
   }
 
-  contains(value) {}
+  contains(value) {
+    // similar to insert just do not make new nodes
+  }
 
-  traverseDepthFirstInOrder(callBack) {}
+  traverseDepthFirstInOrder(callBack) {
+    // go all the way the left if you hit leftnull then print value
+    // go to parent print parent
+    // if parent has right child walk right
+  }
 }
 
 module.exports = BinarySearchTree;
