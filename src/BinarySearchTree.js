@@ -33,14 +33,48 @@ class BinarySearchTree {
 
   contains(value) {
     // similar to insert just do not make new nodes
+    let found = false;
+
+    let cursor = (node) => {
+      // base case (root is same as insert value)
+      if (node.value === value) {
+        found = true;
+        return;
+      }
+      if (value < node.value) {
+        if (node.left === null) {
+          return;
+        } else {
+          cursor(node.left);
+        }
+      } else {
+        if (node.right === null) {
+          return;
+        } else {
+          cursor(node.right);
+        }
+      }
+    };
+    cursor(this);
+    return found;
   }
 
   traverseDepthFirstInOrder(callBack) {
     // go all the way the left if you hit leftnull then print value
-    // go to parent print parent
+    // if left is null print current value
     // if parent has right child walk right
   }
 }
+
+module.exports = BinarySearchTree;
+
+module.exports = BinarySearchTree;
+
+module.exports = BinarySearchTree;
+
+module.exports = BinarySearchTree;
+
+module.exports = BinarySearchTree;
 
 module.exports = BinarySearchTree;
 
