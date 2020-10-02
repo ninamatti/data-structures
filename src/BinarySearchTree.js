@@ -56,56 +56,23 @@ class BinarySearchTree {
       }
     };
     cursor(this);
-    return found; //
+    return found;
   }
 
   traverseDepthFirstInOrder(callBack) {
     // go all the way the left if you hit leftnull then print value
     // if left is null print current value
     // if parent has right child walk right
-
-    //let parentNode;
     let traverse = (root) => {
-      //parentNode = root;
-
-      // does it have left child?
       if (root.left !== null) {
-        // does the left child have any left child?
-        if (root.left.left !== null) {
-          // if no, call traverse with left child as new root node
-          traverse(root.left);
-        }
-        console.log("executing rest of traverse?");
-        if (!root.left.left && !root.left.right) {
-          callBack(root.left);
-          callBack(root);
-        }
+        traverse(root.left);
       }
-      // does it have right child?
+      callBack(root);
       if (root.right !== null) {
-        // does the right child have any children?
-        if (!root.right.left && !root.right.right) {
-          // callBack(root);
-          callBack(root.right);
-        }
+        traverse(root.right);
       }
-
-      /* if (root.left === null && root.right === null) {
-               // console.log(root.value);
-                callBack(root.value);
-                //callBack(parentNode.value);
-                return;
-            }
-            if (root.left !== null) {
-                traverse(root.left);
-            }
-            callBack(root.value);
-            if (root.right !== null) {
-                traverse(root.right);
-            } */
     };
     traverse(this);
-    return undefined;
   }
 }
 

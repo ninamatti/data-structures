@@ -116,6 +116,7 @@ describe("The Binary Search Tree", () => {
         result.push(node.value);
       });
       //[3, 5, 7, 8, 9, 10, 14, 15, 17, 20]
+      console.log(result);
       expect(result).to.eql([3, 5, 8, 10, 15]);
     });
 
