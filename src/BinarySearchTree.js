@@ -60,9 +60,6 @@ class BinarySearchTree {
   }
 
   traverseDepthFirstInOrder(callBack) {
-    // go all the way the left if you hit leftnull then print value
-    // if left is null print current value
-    // if parent has right child walk right
     let traverse = (root) => {
       if (root.left !== null) {
         traverse(root.left);
