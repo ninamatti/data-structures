@@ -45,7 +45,6 @@ describe("Trees", () => {
 
     it("should return true if a value exists", () => {
       tree.addChild(2);
-      tree.remove(2);
       expect(tree.contains(2)).to.equal(true);
     });
 
