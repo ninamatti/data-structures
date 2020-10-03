@@ -7,14 +7,39 @@ class HashTable {
   }
 
   insert(key, value) {
-    const index = simpleHash(k, this.limit);
+    const index = simpleHash(key, this.limit);
+    console.log(index, this.storage);
+    if (!this.storage.hasOwnProperty(index)) {
+      console.log("yay!");
+      this.storage.set(index, value);
+    } else {
+      this.storage.set(index, value);
+    }
   }
 
   retrieve(key) {
-    const idx = simpleHash(k, this.limit);
+    const idx = simpleHash(key, this.limit);
+    return this.storage.get(idx);
   }
 
-  remove(key) {}
+  // controlledArray.each = (callback) => {
+  //   for (let i = 0; i < storage.length; i += 1) {
+  //     callback(storage[i], i, storage);
+  //   }
+  // };
+  remove(key) {
+    let couldRemove = false;
+    const idx = simpleHash(key, this.limit);
+    this.storage.each((value, index, storage) => {
+      if (index === idx) {
+        if (value !== null) {
+          storage[idx] = null;
+          couldRemove = true;
+        }
+      }
+    });
+    return couldRemove;
+  }
 }
 
 module.exports = HashTable;
