@@ -8,9 +8,7 @@ class HashTable {
 
   insert(key, value) {
     const index = simpleHash(key, this.limit);
-    console.log(index, this.storage);
     if (!this.storage.hasOwnProperty(index)) {
-      console.log("yay!");
       this.storage.set(index, value);
     } else {
       this.storage.set(index, value);
@@ -22,11 +20,6 @@ class HashTable {
     return this.storage.get(idx);
   }
 
-  // controlledArray.each = (callback) => {
-  //   for (let i = 0; i < storage.length; i += 1) {
-  //     callback(storage[i], i, storage);
-  //   }
-  // };
   remove(key) {
     let couldRemove = false;
     const idx = simpleHash(key, this.limit);
