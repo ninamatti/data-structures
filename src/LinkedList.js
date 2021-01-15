@@ -1,4 +1,3 @@
-console.log("Hi");
 
 class Node {
   constructor(value) {
@@ -6,8 +5,6 @@ class Node {
     this.value = value;
   }
 }
-//let myNode = new Node(5);
-//console.log('Hii!',  myNode.value);
 
 class LinkedList {
   constructor(headValue) {
